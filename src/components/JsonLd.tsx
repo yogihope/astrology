@@ -108,7 +108,7 @@ const schema = {
       alternateName: "Baby Name by Date of Birth",
       serviceType: "Numerology Consultation",
       description:
-        "A comprehensive newborn baby naming consultation based on Chaldean numerology by master numerologist Puunit Dsai. Includes 12 compatible baby names, handwritten Numeroscope, and unlimited consultation access.",
+        "A comprehensive newborn baby naming consultation based on Chaldean numerology by master numerologist Puunit Dsai. Includes 12 compatible baby names, handwritten Numeroscope, and no time limit, you can ask as many questions.",
       provider: { "@id": `${SITE_URL}/#person` },
       areaServed: "Worldwide",
       audience: {
@@ -155,7 +155,7 @@ const schema = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Unlimited Consultation Access",
+              name: "No Time limit, you can ask as many questions",
               description:
                 "No time restriction, no question limit. Call and in-person consultation options available.",
             },

@@ -36,7 +36,7 @@ const items = [
   {
     icon: Phone,
     num: "03",
-    title: "Unlimited Consultation Access",
+    title: "No Time limit, you can ask as many questions",
     points: [
       "No time restriction",
       "No question limit",
@@ -93,7 +93,7 @@ const WhatYouGet = () => (
               { bad: "Only 4 names", good: "12 highly compatible names", boldGood: true },
               { bad: "Generic info (Google-able)", good: "Handwritten Numeroscope" },
               { bad: "No personalised report", good: "Lifelong personalised blueprint" },
-              { bad: "One-time interaction", good: "Unlimited consultation access" },
+              { bad: "20-30 min consultation", good: "No Time limit, you can ask as many questions" },
             ].map((row, i) => (
               <div
                 key={i}
