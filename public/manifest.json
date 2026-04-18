@@ -1,0 +1,17 @@
+{
+  "name": "Numeroworldf® — Vedic Baby Name Consultation",
+  "short_name": "Numeroworldf",
+  "description": "Get a numerologically aligned baby name by Vedic expert Puunit Dsai. Trusted by 5000+ families.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f2b1c",
+  "theme_color": "#a07850",
+  "orientation": "portrait-primary",
+  "lang": "en-IN",
+  "categories": ["lifestyle", "education", "astrology"],
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

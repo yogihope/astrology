@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Inquiry {
+  id               Int      @id @default(autoincrement())
+  parentName       String
+  whatsapp         String
+  dob              String
+  tob              String?
+  pob              String
+  gender           String?
+  consultationType String?
+  source           String
+  createdAt        DateTime @default(now())
+
+  @@map("inquiries")
+}
