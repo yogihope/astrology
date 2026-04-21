@@ -13,9 +13,27 @@ export default async function AdminDashboard() {
     redirect("/admin");
   }
 
-  const inquiries = await prisma.inquiry.findMany({
-    orderBy: { createdAt: "desc" },
-  });
+  let inquiries: Awaited<ReturnType<typeof prisma.inquiry.findMany>> = [];
+  let dbError: string | null = null;
+  try {
+    inquiries = await prisma.inquiry.findMany({
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (err) {
+    dbError = err instanceof Error ? `${err.name}: ${err.message}` : String(err);
+    console.error("Dashboard DB error:", err);
+  }
+
+  if (dbError) {
+    return (
+      <div className="min-h-screen bg-gray-950 text-white p-8">
+        <div className="max-w-3xl mx-auto bg-red-950/40 border border-red-800 rounded-2xl p-6">
+          <h1 className="text-xl font-bold text-red-300 mb-2">Database connection failed</h1>
+          <pre className="text-xs text-red-200 whitespace-pre-wrap break-all">{dbError}</pre>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">
