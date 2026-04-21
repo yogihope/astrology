@@ -11,7 +11,10 @@ function parseDbUrl(url: string) {
     user: decodeURIComponent(u.username),
     password: decodeURIComponent(u.password),
     database: u.pathname.slice(1),
-    ssl: true,
+    ssl: { rejectUnauthorized: true },
+    connectTimeout: 30000,
+    acquireTimeout: 30000,
+    connectionLimit: 5,
   };
 }
 
