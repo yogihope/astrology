@@ -3,6 +3,12 @@
 import { useState } from "react";
 import { Lock } from "lucide-react";
 
+declare global {
+  interface Window {
+    gtag: (...args: unknown[]) => void;
+  }
+}
+
 const HeroLeadForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
@@ -38,6 +44,11 @@ const HeroLeadForm = () => {
     }
     setLoading(false);
     setSubmitted(true);
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("event", "conversion", {
+        send_to: "AW-438395182/2i9UCNS-_qMcEK7ChdEB",
+      });
+    }
   };
 
   if (submitted) {
